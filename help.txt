@@ -1,3 +1,5 @@
+
+
 '''
 1. import Flask class -> an instance of this class is WSGI application.
 2. param to Flask is the module or package required by Flask to know where to look for templates, static content etc.
@@ -23,6 +25,29 @@ DEBUG_MODE
             print(url_for('wish', event='service anniversary'))
 
         output : /wish/service%20anniversary
+
+9. HTTP methods
+    * @app.route('/home', methods=['GET', 'POST'])
+
+10. static files
+    * create a folder 'static' and place the contents there
+    * the files are accessible using the 'static' end point
+    * i.e. url_for('static', 'style.css')
+
+11. Rendering templates
+    * from flask import render_template
+    * create a "templates" folder, i.e. Flask will look for templates in the "templates" folder.
+    * render_template('home.html', key1=value1)
+        a. first argument is the template name to be displayed.
+        b. key/value pair(keyword argument) which need to be passed on to template. note, these values will be accessible in the template using the template language.
+        c. inside the template, you will also have access to "session", "request" and "g" objects.
+    * usage of jinja template language, i.e. usage of tags {{ }}, {% if %}, {% else %} etc inside the html.
+        a. template inheritence is possible in jinja
+    
+    * from markupsafe import Markup
+        a. usage of Markup, Markup.escape for escaping character in HTML strings.
+    
+
 
 
 '''

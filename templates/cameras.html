@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">    
+    <title>Cameras</title>
+</head>
+<body>
+    {% if brand %}    
+        <h1>The following {{brand}} cameras are available</h1>
+        {% for camera in cameras %}
+            {% if camera.type==brand %}
+                <h2>{{camera.name}}</h2>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+    <h1> The following cameras are available</h1>
+        {% for camera in cameras %}           
+            <h2>{{camera.name}}</h2>            
+        {% endfor %}
+    {% endif %}    
+</body>
+</html>

@@ -41,5 +41,25 @@ def home():
 def hello(name=None):
     return render_template('hello.html', name=name)
 
+@app.route('/cameras')
+@app.route('/cameras/<brand>')
+def listCameras(brand=None):
+    
+    allCameras = [{'name':'xt4', 'type':'Fujifilm'},
+    {'name':'xt3', 'type':'Fujifilm'},
+    {'name':'xh1', 'type':'Fujifilm'},
+    {'name':'a7iii', 'type':'Sony'},
+    {'name':'a6600', 'type':'Sony'},
+    {'name':'gh5', 'type':'Panasonic'},
+    {'name':'80d', 'type':'Canon'},
+    {'name':'90d', 'type':'Canon'},
+    {'name':'r5', 'type':'Canon'},
+    {'name':'5d mark iv', 'type':'Canon'},
+    {'name':'z6', 'type':'Nikon'},
+    {'name':'d850', 'type':'Nikon'}
+    ]
+
+    return render_template('cameras.html', brand=brand, cameras=allCameras)
+
 with app.test_request_context():
     print(url_for('wish', event='service anniversary'))

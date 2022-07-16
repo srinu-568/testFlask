@@ -2,8 +2,9 @@
 2. param to Flask is the module or package required by Flask to know where to look for templates, static content etc.
 3. route decorator will tell us, what URL should trigger our function.
 4. the function name(hello_world in our case) is also used to generate URL.
-5. run -> set FLASK_APP = hello.py
-6. run -> flask run - this will start the dev web server.
+5. if there is requirements.txt, then install the dependencies -> pip install -r requirements.txt
+6. run -> set FLASK_APP = hello.py
+7. run -> flask run - this will start the dev web server.
 
 DEBUG_MODE
 
